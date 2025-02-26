@@ -1,0 +1,38 @@
+:root {
+  --container-size: 500px;
+  --square-size: 50px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.container {
+  box-sizing: content-box;
+  border: 1px solid blue;
+  width: var(--container-size);
+  height: var(--container-size);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  margin-top: 30px;
+  font-size: 50px;
+}
+
+.square {
+  border: 1px solid black;
+  width: var(--square-size);
+  height: var(--square-size);
+}
