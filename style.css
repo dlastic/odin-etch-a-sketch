@@ -1,8 +1,3 @@
-:root {
-  --container-size: 500px;
-  --square-size: 50px;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,10 +9,26 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 50px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.container {
+h1 {
+  margin-top: 30px;
+  font-size: 3rem;
+  color: transparent;
+  background: linear-gradient(135deg, #7e9cff, #8e75ff);
+  background-clip: text;
+}
+
+.eas-container {
+  display: flex;
+  justify-content: center;
+  align-items: self-start;
+  gap: 40px;
+}
+
+.grid-container {
   box-sizing: content-box;
   border: 1px solid blue;
   width: var(--container-size);
@@ -26,15 +37,32 @@ main {
   flex-wrap: wrap;
 }
 
-h1 {
-  margin-top: 30px;
-  font-size: 50px;
-}
-
 .square {
-  border: 1px solid black;
+  border: 1px solid #7e9cff;
   width: var(--square-size);
   height: var(--square-size);
   cursor: default;
   user-select: none;
+}
+
+button {
+  background: linear-gradient(135deg, #7e9cff, #8e75ff);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(126, 156, 255, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #8e75ff, #7e9cff);
+  box-shadow: 0 6px 12px rgba(126, 156, 255, 0.5); 
+}
+
+button:active {
+  background: linear-gradient(135deg, #6a54c9, #5c48b3);
+  box-shadow: 0 2px 4px rgba(126, 156, 255, 0.3); 
 }
