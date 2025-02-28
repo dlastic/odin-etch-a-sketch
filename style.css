@@ -30,7 +30,7 @@ h1 {
 
 .grid-container {
   box-sizing: content-box;
-  border: 1px solid blue;
+  border: 1px solid #7e9cff;;
   width: var(--container-size);
   height: var(--container-size);
   display: flex;
@@ -43,6 +43,12 @@ h1 {
   height: var(--square-size);
   cursor: default;
   user-select: none;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 button {
@@ -62,7 +68,24 @@ button:hover {
   box-shadow: 0 6px 12px rgba(126, 156, 255, 0.5); 
 }
 
-button:active {
+button#grid-size:active,
+button#clear:active {
   background: linear-gradient(135deg, #6a54c9, #5c48b3);
   box-shadow: 0 2px 4px rgba(126, 156, 255, 0.3); 
+}
+
+#rainbow-mode.rainbow {
+  background: linear-gradient(90deg, 
+    red, 
+    orange, 
+    yellow, 
+    green, 
+    blue, 
+    indigo, 
+    violet
+  );
+}
+
+#clear {
+  margin-top: 25px;
 }
