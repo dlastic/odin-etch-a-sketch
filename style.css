@@ -68,8 +68,7 @@ button:hover {
   box-shadow: 0 6px 12px rgba(126, 156, 255, 0.5); 
 }
 
-button#grid-size:active,
-button#clear:active {
+button.active-change:active {
   background: linear-gradient(135deg, #6a54c9, #5c48b3);
   box-shadow: 0 2px 4px rgba(126, 156, 255, 0.3); 
 }
@@ -88,4 +87,8 @@ button#clear:active {
 
 #clear {
   margin-top: 25px;
+}
+
+.color-picker {
+  display: none;
 }

@@ -2,10 +2,13 @@ let squaresPerSide = 20;
 const gridContainerSize = 600;
 let isMouseDown = false;
 let rainbowMode = false;
+let squareColor = "red";
 const containerDiv = document.querySelector(".grid-container");
 const gridSizeBtn = document.querySelector("#grid-size");
 const rainbowModeBtn = document.querySelector("#rainbow-mode");
 const clearGridBtn = document.querySelector("#clear");
+const changeColorBtn = document.querySelector("#color-change");
+const colorPicker = document.querySelector("#color-picker");
 
 function generateGrid(size, squareCount) {
   const squareSize = size / squareCount;
@@ -39,7 +42,7 @@ function setColor() {
     const rgbBlue = Math.floor(Math.random() * 255);
     return `rgb(${rgbRed}, ${rgbGreen}, ${rgbBlue})`;
   } else {
-    return "red";
+    return squareColor;
   }
 
 }
@@ -83,4 +86,14 @@ rainbowModeBtn.addEventListener("click", () => {
 // Clear button
 clearGridBtn.addEventListener("click", () => {
   clearGrid();
-})
+});
+
+// Change color button
+changeColorBtn.addEventListener("click", () => {
+  colorPicker.click();
+});
+
+// Color picker
+colorPicker.addEventListener("input", (event) => {
+  squareColor = event.target.value;
+});
