@@ -24,9 +24,7 @@ function generateGrid(size, squareCount) {
 }
 
 function removeGrid() {
-  while (containerDiv.firstChild) {
-    containerDiv.removeChild(containerDiv.firstChild);
-  }
+  containerDiv.innerHTML = "";
 }
 
 function clearGrid() {
