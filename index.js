@@ -10,9 +10,10 @@ const clearGridBtn = document.querySelector("#clear");
 const changeColorBtn = document.querySelector("#color-change");
 const colorPicker = document.querySelector("#color-picker");
 
+document.documentElement.style.setProperty("--container-size", `${gridContainerSize}px`);
+
 function generateGrid(size, squareCount) {
   const squareSize = size / squareCount;
-  document.documentElement.style.setProperty("--container-size", `${gridContainerSize}px`);
   document.documentElement.style.setProperty("--square-size", `${squareSize}px`);
 
   for (let i = 0; i < squaresPerSide ** 2; i++) {
@@ -62,10 +63,8 @@ function setColoringEffect() {
   });
 }
 
-// Generate the starting grid
 generateGrid(gridContainerSize, squaresPerSide);
 
-// Change the grid size with a button
 gridSizeBtn.addEventListener("click", () => {
   do {
     squaresPerSide = parseInt(prompt("Enter the number of squares per side (between 1 and 100)"), 10);
@@ -74,24 +73,20 @@ gridSizeBtn.addEventListener("click", () => {
   generateGrid(gridContainerSize, squaresPerSide);
 });
 
-// Rainbow button
 rainbowModeBtn.addEventListener("click", () => {
   rainbowModeBtn.classList.toggle("rainbow");
   rainbowMode = !rainbowMode;
   setColoringEffect();
 });
 
-// Clear button
 clearGridBtn.addEventListener("click", () => {
   clearGrid();
 });
 
-// Change color button
 changeColorBtn.addEventListener("click", () => {
   colorPicker.click();
 });
 
-// Color picker
 colorPicker.addEventListener("input", (event) => {
   squareColor = event.target.value;
 });
